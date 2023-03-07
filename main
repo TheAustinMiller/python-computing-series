@@ -1,0 +1,31 @@
+# ComputingSeries.py
+
+"""
+Author: Austin Miller
+Class: CS 170/01
+Purpose: Run an algorithm that uses an algorithm to decrease a given number until it reaches one, print the series
+"""
+
+
+def main():
+    message = ""
+    steps = 0
+    start = int(input("Enter a positive integer: "))
+    while start <= 0:
+        print("Invalid input. Number must be positive.")
+        start = int(input("Enter a positive integer: "))
+    message += str(start) + " "
+    while start != 1:
+        if start % 2 == 1:
+            start = start * 3 + 1
+            message += str(start) + " "
+            steps += 1
+        start = start // 2
+        message += str(start) + " "
+        steps += 1
+
+    print("\nThe series is:", message)
+    print("\nIt took", steps, "steps to reach 1")
+
+
+main()
